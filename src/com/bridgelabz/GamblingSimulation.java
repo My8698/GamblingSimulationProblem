@@ -27,6 +27,7 @@ public class GamblingSimulation {
 /**
  * for loop to iterate upto 20 days
  */
+        int profit=0;
         for (int i = 1; i <= 20; i++) {
             int result = startGambling();
             amountAfter_20_Days += result;
@@ -39,13 +40,19 @@ public class GamblingSimulation {
         }
         System.out.println("Amount after 20 day is " + amountAfter_20_Days);
         if (amountAfter_20_Days > totalAmountInvestedIn_20_Days) {
-            int profit = amountAfter_20_Days - totalAmountInvestedIn_20_Days;
+             profit = amountAfter_20_Days - totalAmountInvestedIn_20_Days;
             System.out.println("Total profit after 20 days is = " + profit);
 
         } else if (amountAfter_20_Days < totalAmountInvestedIn_20_Days) {
             int loss = totalAmountInvestedIn_20_Days - amountAfter_20_Days;
             System.out.println("Total loss after 20 days is = " + loss);
         } else System.out.println("No profit No loss");
+
+        if (amountAfter_20_Days > totalAmountInvestedIn_20_Days) {
+            System.out.println("===============================================");
+            System.out.println("Won " + profit + "$ Last month. Play Again");
+            playFor_20_Days();
+        }
     }
     public static void main(String[] args) {
         GamblingSimulation play = new GamblingSimulation();
