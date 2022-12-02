@@ -1,19 +1,28 @@
 package com.bridgelabz;
+
 public class GamblingSimulation {
     /***
-     *initialize starting amount and every
-     * bet per game for everyday
+     *to decide either gambler win or loose the game
      */
-    public static void startGambling() {
-        int startingAmount = 100;
+    public void startGambling() {
+        int startingBetAmount = 100;
         int bet_Per_Game = 1;
-        System.out.println("starting amount=" + startingAmount);
-        System.out.println("bet per game=" + bet_Per_Game);
-    }
-    public static void main(String args[]) {
         /**
-         * method call
+         * player either win or loose
          */
-        startGambling();
+        int bet_result = (int) (Math.random() * 10) % 2;
+        if (bet_result == 0) {
+            startingBetAmount -= 1;
+            System.out.println("Gambler loose and left amount is= " + startingBetAmount);
+        } else {
+            startingBetAmount += 1;
+            System.out.println("Gambler win and left amount is=" + startingBetAmount);
+
+        }
+    }
+
+    public static void main(String[] args) {
+        GamblingSimulation play = new GamblingSimulation();
+        play.startGambling();
     }
 }
