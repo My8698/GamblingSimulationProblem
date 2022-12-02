@@ -1,7 +1,6 @@
 package com.bridgelabz;
 /***
- *each month would like to know the days won and
- * lost and by how much it is...
+ *know the lukiest and unluckiest day
  */
 public class GamblingSimulation {
     public int startGambling() {
@@ -32,10 +31,10 @@ public class GamblingSimulation {
             int result = startGambling();
             amountAfter_20_Days += result;
             if (result == 50) {
-                System.out.println("Lost 50$ in day " + i);
+                System.out.println("Unlucky day Lost 50$ in day " + i);
             }
             if (result == 150) {
-                System.out.println("Win 50$ in day " + i);
+                System.out.println("Lucky day Won 50$ in day " + i);
             }
         }
         System.out.println("Amount after 20 day is " + amountAfter_20_Days);
